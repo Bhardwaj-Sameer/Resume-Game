@@ -1,7 +1,9 @@
 import { scaleFactor } from "./constants";
-import { k } from "./kaboomCtx";
+import kaboom from "kaboom";
 import { displayDialogue } from "./utils";
 
+
+const k = kaboom();
 k.loadSprite("spritesheet", "./spritesheet.png", {
     sliceX: 39,
     sliceY: 31,
