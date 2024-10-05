@@ -25,7 +25,7 @@ k.scene("main", async () =>{
     const layers = mapData.layers;
 
     const map = k.make([k.sprite("map"), k.pos(0), k.scale(scaleFactor)])
-
+    k.add(map);
     const player = k.make([
         k.sprite("spritesheet", { anim: "idle-down"}),
         k.area({
@@ -38,7 +38,7 @@ k.scene("main", async () =>{
         {
             speed: 250,
             direction: "down",
-            isInDialogue: False,
+            isInDialogue: false,
         },
         "player",
     ]);
@@ -51,18 +51,17 @@ k.scene("main", async () =>{
                         shape: new k.Rect(k.vec2(0), boundary.width, boundary.height),
                     }),
                     k.body({isStatic: true}),
-                    k.pos(boundary.x, boundary.y),
+                    k.pos(boundary.x * scaleFactor, boundary.y * scaleFactor),
                     boundary.name, 
                 ]);
 
                 if(boundary.name){
                     player.onCollide(boundary.name, () =>{
                         player.isInDialogue = true;
-                        displayDialogue("Todo", () => (player.isInDialogue = False));
+                        displayDialogue("Todo", () => (player.isInDialogue = false));
                     });
                 }
             }
-            continue;
         }
 
         if(layer.name ==="spawnpoints"){

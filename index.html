@@ -39,7 +39,7 @@
           justify-content: flex-start;
           align-items: flex-start;
           word-spacing: 0.2rem;
-          filter: drop-shadow(0 0 0.75 rem rgb(112,112,112));
+          filter: drop-shadow(0 0 0.75rem rgb(112,112,112));
         }
 
         .ui-text {
@@ -70,15 +70,21 @@
           user-select: none;
         }
     </style>
+
+canvas {
+  width: 100vw;
+  height: 100vh;
+}
+
     <div id="app">
       <div id="ui">
         <p class = "note">Tap/Click around to move </p>
-        <div id = "textbox-container" style="display: none">
+        <div id = "textbox-container" style="display: none;">
           <div id = "textbox">
             <p id="dialogue" class = "ui-text"></p>
           </div>
-          <div  class ="btn=container">
-          <button id="close" class="ui-close-btn"></button>
+          <div class ="btn-container">
+          <button id="close" class="ui-close-btn">Close</button>
         </div>
       </div>
       <canvas id = "game"></canvas>
