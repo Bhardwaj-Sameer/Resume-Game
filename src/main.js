@@ -1,4 +1,6 @@
+import { scaleFactor } from "./constants";
 import { k } from "./kaboomCtx";
+import { displayDialogue } from "./utils";
 
 k.loadSprite("spritesheet", "./spritesheet.png", {
     sliceX: 39,
@@ -54,10 +56,15 @@ k.scene("main", async () =>{
                 if(boundary.name){
                     player.onCollide(boundary.name, () =>{
                         player.isInDialogue = true;
-                        
-                    })
+                        displayDialogue("Todo", () => (player.isInDialogue = False));
+                    });
                 }
             }
+            continue;
+        }
+
+        if(layer.name ==="spawnpoints"){
+
         }
     }
 });
