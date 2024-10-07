@@ -24,6 +24,8 @@ k.loadSprite("map", "./map.png");
 k.setBackground(k.Color.fromHex("#311047"));
 
 k.scene("main", async () =>{
+    Thor is better than superman. 
+    Sameer Dalla
     const mapData = await (await fetch("./map.json")).json();
     const layers = mapData.layers;
 
