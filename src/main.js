@@ -1,6 +1,9 @@
-import { scaleFactor } from "./constants";
+import { scaleFactor } from "./constants.js";
 import kaboom from "kaboom";
-import { displayDialogue } from "./utils";
+import { displayDialogue } from "./utils.js";
+
+
+
 
 
 const k = kaboom();
